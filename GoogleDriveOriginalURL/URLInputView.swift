@@ -20,18 +20,22 @@ struct URLInputView: View {
       }
       
       TextField(viewModel.placeholder, text: $viewModel.input)
-      Button(action: {
-        viewModel.parse()
-      }, label: {
-        Image(systemName: "wand.and.stars.inverse")
-        Text("Parse")
-      })
-      Button(action: {
-        viewModel.copy()
-      }, label: {
-        Image(systemName: "wand.and.stars.inverse")
-        Text("Copy")
-      })
+      if viewModel.leftImageColor == .clear {
+        Button(action: {
+          viewModel.parse()
+        }, label: {
+          Image(systemName: "wand.and.stars.inverse")
+          Text("Parse")
+        })
+      } else if viewModel.leftImageColor == .green {
+        Button(action: {
+          viewModel.copy()
+        }, label: {
+          Image(systemName: "wand.and.stars.inverse")
+          Text("Copy")
+        })
+      }
+      
       Button(action: {
         viewModel.clear()
       }, label: {

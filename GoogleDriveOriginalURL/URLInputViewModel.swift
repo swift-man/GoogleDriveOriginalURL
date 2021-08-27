@@ -49,7 +49,7 @@ class URLInputViewModel: ObservableObject {
   }
   
   func clear() {
-    service.inputSubject.send((.normal, ""))
+    service.clear()
   }
   
   func parse() {

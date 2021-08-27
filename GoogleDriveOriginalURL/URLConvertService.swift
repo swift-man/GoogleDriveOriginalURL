@@ -23,17 +23,22 @@ final class URLConvertService {
     
     var urlString = input
     if urlString.isEmpty {
-      inputSubject.send((.failure, "text not have"))
+      inputSubject.send((.failure, "입력된 URL 이 없어요!"))
       return
     }
     if !urlString.hasPrefix("https://drive.google.com/") {
-      inputSubject.send((.failure, "invalid URL!! check https://drive.google.com/"))
+      inputSubject.send((.failure, "URL 을 확인해부세요. ex) https://drive.google.com/"))
       return
     }
     urlString = urlString.replacingOccurrences(of: "/file/d/", with: "/uc?export=view&id=")
     urlString = urlString.replacingOccurrences(of: "/view?usp=sharing", with: "")
     
     inputSubject.send((.success, hasMarkdownTag ? "![Image](\(urlString))" : urlString ))
+  }
+  
+  func clear() {
+    stack.append(inputSubject.value)
+    inputSubject.send((.normal, ""))
   }
   
   func undo() {
