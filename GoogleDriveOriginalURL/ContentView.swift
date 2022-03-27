@@ -17,13 +17,19 @@ struct ContentView: View {
                            URLInputViewModel(index: 6),
                            URLInputViewModel(index: 7),
                            URLInputViewModel(index: 8),
-                           URLInputViewModel(index: 9)]
+                           URLInputViewModel(index: 9),
+                           URLInputViewModel(index: 10),
+                           URLInputViewModel(index: 11),
+                           URLInputViewModel(index: 12),
+                           URLInputViewModel(index: 13),
+                           URLInputViewModel(index: 14),
+                           URLInputViewModel(index: 15)]
   
   @State private var isOn = true
   
   var body: some View {
     List {
-      ForEach(viewModels.indices) { index in
+      ForEach(0 ..< viewModels.count, id: \.self) { index in
         URLInputView(viewModel: viewModels[index])
       }
       BottomView(isOn: $isOn, viewModels: $viewModels)
