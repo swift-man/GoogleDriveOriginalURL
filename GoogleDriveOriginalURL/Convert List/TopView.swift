@@ -1,5 +1,5 @@
 //
-//  BottomView.swift
+//  TopView.swift
 //  GoogleDriveOriginalURL
 //
 //  Created by 김승진 on 2021/08/26.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct BottomView: View {
-  @Binding var isOn: Bool
+struct TopView: View {
   @Binding var viewModels: [URLInputViewModel]
   
   var body: some View {
     HStack {
       Button(action: {
         for viewModel in viewModels {
-          viewModel.convert(hasMarkdownTag: isOn)
+          viewModel.convertAll()
         }
       }, label: {
         Image(systemName: "hammer")
         Text("Convert!")
       })
+      Spacer()
       Button(action: {
         for viewModel in viewModels {
           viewModel.undo()
@@ -37,9 +37,6 @@ struct BottomView: View {
         Image(systemName: "xmark")
         Text("All Clear")
       })
-      Spacer()
-      Toggle("Append MarkDown Tag", isOn: $isOn)
-        .toggleStyle(SwitchToggleStyle())
     }
   }
 }

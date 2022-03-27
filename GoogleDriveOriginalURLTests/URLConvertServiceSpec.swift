@@ -27,22 +27,37 @@ class URLConvertServiceSpec: QuickSpec {
         }
       }
       
-      context("convertInputURL hasMarkdownTag: false") {
+      context("convertInputURL hasMarkdownTag: false hasMarkdownEnterKey: true") {
         it("https://drive.google.com/file/d/1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_/view?usp=sharing") {
+          
+          
           service.convertInputURL(hasMarkdownTag: false,
+                                  hasMarkdownEnterKey: true,
                                   input: "https://drive.google.com/file/d/1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_/view?usp=sharing")
           let value = service.inputSubject.value
-          expect(value.state).to(equal(.normal))
-          expect(value.text).to(equal("https://drive.google.com/uc?export=view&id=1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_"))
+          expect(value.state).to(equal(.success))
+          expect(value.text).to(equal("https://drive.google.com/uc?export=view&id=1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_  "))
         }
       }
       
-      context("convertInputURL hasMarkdownTag: true") {
+      context("convertInputURL hasMarkdownTag: true hasMarkdownEnterKey: true") {
         it("https://drive.google.com/file/d/1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_/view?usp=sharing") {
           service.convertInputURL(hasMarkdownTag: true,
+                                  hasMarkdownEnterKey: true,
                                   input: "https://drive.google.com/file/d/1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_/view?usp=sharing")
           let value = service.inputSubject.value
-          expect(value.state).to(equal(.normal))
+          expect(value.state).to(equal(.success))
+          expect(value.text).to(equal("![Image](https://drive.google.com/uc?export=view&id=1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_)  "))
+        }
+      }
+      
+      context("convertInputURL hasMarkdownTag: true hasMarkdownEnterKey: false") {
+        it("https://drive.google.com/file/d/1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_/view?usp=sharing") {
+          service.convertInputURL(hasMarkdownTag: true,
+                                  hasMarkdownEnterKey: false,
+                                  input: "https://drive.google.com/file/d/1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_/view?usp=sharing")
+          let value = service.inputSubject.value
+          expect(value.state).to(equal(.success))
           expect(value.text).to(equal("![Image](https://drive.google.com/uc?export=view&id=1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_)"))
         }
       }
