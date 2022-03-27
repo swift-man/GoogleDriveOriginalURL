@@ -29,7 +29,7 @@ struct ContentView: View {
   
   var body: some View {
     List {
-      ForEach(viewModels.indices) { index in
+      ForEach(0 ..< viewModels.count, id: \.self) { index in
         URLInputView(viewModel: viewModels[index])
       }
       BottomView(isOn: $isOn, viewModels: $viewModels)
