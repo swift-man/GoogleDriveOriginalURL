@@ -29,6 +29,7 @@ final class URLInputViewModel: ObservableObject {
   var subscriptions = Set<AnyCancellable>()
   var leftImageName: String = ""
   @Published var leftImageColor = Color.clear
+  @Published var copyButtonColor = Color.white
   @Published var input: String = ""
   @Published var state: URLConvertState = .normal
   
@@ -102,5 +103,9 @@ final class URLInputViewModel: ObservableObject {
     let pasteBoard = NSPasteboard.general
     pasteBoard.clearContents()
     pasteBoard.setString(input, forType: .string)
+  }
+  
+  func updateCopyButtonColor() {
+    copyButtonColor = .green
   }
 }
