@@ -1,6 +1,6 @@
 # GoogleDriveOriginalURL
 
-https://swift-man.github.io/git/blog/imageUpload/  
+https://blog.slarea.com/git/blog/imageUpload/  
 
 ![Badge](https://img.shields.io/badge/Swift-white.svg?style=flat-square&logo=Swift)
 ![Badge](https://img.shields.io/badge/SwiftUI-001b87.svg?style=flat-square&logo=Swift&logoColor=black)
