@@ -41,7 +41,7 @@ class URLInputViewModelSpec: QuickSpec {
         // test에서 기대되는 결과. 위에서 명사로 작성한 테스트 대상의 행동을 작성
         beforeEach {
           viewModel.input = "https://drive.google.com/file/d/19RK0KgRBnPW8hDSGbVfOhUlrmrBusR8t/view?usp=sharing"
-          viewModel.convertAll()
+          viewModel.convert()
         }
         
         it("leftImageName 는 checkmark.square.fill") {
@@ -56,7 +56,7 @@ class URLInputViewModelSpec: QuickSpec {
         // test에서 기대되는 결과. 위에서 명사로 작성한 테스트 대상의 행동을 작성
         beforeEach {
           viewModel.input = "fdasfsfds"
-          viewModel.convertAll()
+          viewModel.convert()
         }
         
         it("leftImageName 는 exclamationmark.octagon.fill") {

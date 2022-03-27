@@ -10,7 +10,7 @@ import SwiftUI
 import CoreServices
 
 struct URLInputView: View {
-  @State var viewModel: URLInputViewModel
+  @StateObject var viewModel: URLInputViewModel
   
   var body: some View {
     HStack {
@@ -39,10 +39,12 @@ struct URLInputView: View {
       } else if viewModel.leftImageColor == .green {
         Button(action: {
           viewModel.copy()
+          viewModel.updateCopyButtonColor()
         }, label: {
           Image(systemName: "wand.and.stars.inverse")
           Text("Copy")
         })
+        .foregroundColor(viewModel.copyButtonColor)
       }
       
       Button(action: {

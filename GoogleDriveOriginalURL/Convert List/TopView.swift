@@ -8,31 +8,36 @@
 import SwiftUI
 
 struct TopView: View {
-  @Binding var viewModels: [URLInputViewModel]
+  @Binding var topViewModel: TopViewModel
+  @State var isHiddenAllCopyButton = true
   
   var body: some View {
     HStack {
       Button(action: {
-        for viewModel in viewModels {
-          viewModel.convertAll()
-        }
+        topViewModel.convertAll()
+        isHiddenAllCopyButton = !topViewModel.hasSuccess()
       }, label: {
         Image(systemName: "hammer")
         Text("Convert!")
       })
+      Button(action: {
+        topViewModel.copyAll()
+      }, label: {
+        Image(systemName: "text.badge.checkmark")
+        Text("All Copy")
+      })
+      .opacity(isHiddenAllCopyButton ? 0 : 1)
       Spacer()
       Button(action: {
-        for viewModel in viewModels {
-          viewModel.undo()
-        }
+        topViewModel.undoAll()
+        isHiddenAllCopyButton = !topViewModel.hasSuccess()
       }, label: {
         Image(systemName: "arrow.uturn.backward")
         Text("undo")
       })
       Button(action: {
-        for viewModel in viewModels {
-          viewModel.clear()
-        }
+        topViewModel.clearAll()
+        isHiddenAllCopyButton = true
       }, label: {
         Image(systemName: "xmark")
         Text("All Clear")

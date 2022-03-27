@@ -29,7 +29,7 @@ final class URLConvertService {
       return
     }
     if !urlString.hasPrefix("https://drive.google.com/") {
-      inputSubject.send((.failure, "URL 을 확인해부세요. ex) https://drive.google.com/"))
+      inputSubject.send((.failure, "URL 을 확인해보세요. ex) https://drive.google.com/"))
       return
     }
     urlString = urlString.replacingOccurrences(of: "/file/d/", with: "/uc?export=view&id=")

@@ -29,7 +29,9 @@ final class URLInputViewModel: ObservableObject {
   var subscriptions = Set<AnyCancellable>()
   var leftImageName: String = ""
   @Published var leftImageColor = Color.clear
+  @Published var copyButtonColor = Color.white
   @Published var input: String = ""
+  @Published var state: URLConvertState = .normal
   
   @Published var isError: Bool = false
   @Published var errorMessage: String = ""
@@ -41,7 +43,10 @@ final class URLInputViewModel: ObservableObject {
     
     service.inputSubject.sink(receiveValue: { [weak self] value in
       guard let self = self else { return }
+      
       self.input = value.text
+      self.state = value.state
+      
       switch value.state {
       case .failure:
         self.leftImageName = "exclamationmark.octagon.fill"
@@ -57,7 +62,7 @@ final class URLInputViewModel: ObservableObject {
     .store(in: &subscriptions)
   }
   
-  func convertAll() {
+  func convert() {
     let settingsViewModel = SettingsViewModel()
     service.convertInputURL(hasMarkdownTag: settingsViewModel.isOnMarkdownTag,
                             hasMarkdownEnterKey: settingsViewModel.isOnMarkdownEnterKey,
@@ -85,7 +90,7 @@ final class URLInputViewModel: ObservableObject {
       errorMessage = URLInputViewModelError.notURL.message
       return
     }
-        
+    
     service.inputSubject.send((.normal, str))
   }
   
@@ -98,5 +103,9 @@ final class URLInputViewModel: ObservableObject {
     let pasteBoard = NSPasteboard.general
     pasteBoard.clearContents()
     pasteBoard.setString(input, forType: .string)
+  }
+  
+  func updateCopyButtonColor() {
+    copyButtonColor = .green
   }
 }
