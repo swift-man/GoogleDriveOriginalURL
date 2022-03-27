@@ -10,7 +10,7 @@ import SwiftUI
 import CoreServices
 
 struct URLInputView: View {
-  @StateObject var viewModel: URLInputViewModel
+  @State var viewModel: URLInputViewModel
   
   var body: some View {
     HStack {
@@ -26,6 +26,15 @@ struct URLInputView: View {
         }, label: {
           Image(systemName: "wand.and.stars.inverse")
           Text("Parse")
+        })
+        .alert(Text("오류가 발생했습니다."), isPresented: $viewModel.isError, actions: {
+          Button(action: {
+            viewModel.clearError()
+          }, label: {
+            Text("확인")
+          })
+        }, message: {
+          Text(viewModel.errorMessage)
         })
       } else if viewModel.leftImageColor == .green {
         Button(action: {

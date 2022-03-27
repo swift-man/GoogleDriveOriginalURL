@@ -18,7 +18,9 @@ final class URLConvertService {
   let inputSubject = CurrentValueSubject<(state: URLConvertState, text: String), Never>((.normal, ""))
   private var stack: [(URLConvertState, String)] = []
   
-  func convertInputURL(hasMarkdownTag: Bool, input: String) {
+  func convertInputURL(hasMarkdownTag: Bool,
+                       hasMarkdownEnterKey: Bool,
+                       input: String) {
     stack.append(inputSubject.value)
     
     var urlString = input
@@ -33,7 +35,15 @@ final class URLConvertService {
     urlString = urlString.replacingOccurrences(of: "/file/d/", with: "/uc?export=view&id=")
     urlString = urlString.replacingOccurrences(of: "/view?usp=sharing", with: "")
     
-    inputSubject.send((.success, hasMarkdownTag ? "![Image](\(urlString))" : urlString ))
+    if hasMarkdownTag {
+      urlString = "![Image](\(urlString))"
+    }
+    
+    if hasMarkdownEnterKey {
+      urlString = "\(urlString)  "
+    }
+    
+    inputSubject.send((.success, urlString))
   }
   
   func clear() {

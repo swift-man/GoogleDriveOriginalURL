@@ -19,7 +19,11 @@
 		E572EB3E26D728D6003AC76C /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = E572EB3D26D728D6003AC76C /* Nimble */; };
 		E572EB4126D728E8003AC76C /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = E572EB4026D728E8003AC76C /* Quick */; };
 		E572EB4326D741F5003AC76C /* URLInputViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572EB4226D741F5003AC76C /* URLInputViewModelSpec.swift */; };
-		E572EB4526D7431C003AC76C /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572EB4426D7431C003AC76C /* BottomView.swift */; };
+		E572EB4526D7431C003AC76C /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572EB4426D7431C003AC76C /* TopView.swift */; };
+		E5E0021327F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021227F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift */; };
+		E5E0021527F0A1D3006CEC8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021427F0A1D3006CEC8B /* SettingsView.swift */; };
+		E5E0021827F0A215006CEC8B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */; };
+		E5E0021B27F0A592006CEC8B /* ConvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021A27F0A592006CEC8B /* ConvertListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +61,11 @@
 		E572EB3226D71C1B003AC76C /* URLConvertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertService.swift; sourceTree = "<group>"; };
 		E572EB3426D71E3D003AC76C /* URLConvertServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertServiceSpec.swift; sourceTree = "<group>"; };
 		E572EB4226D741F5003AC76C /* URLInputViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLInputViewModelSpec.swift; sourceTree = "<group>"; };
-		E572EB4426D7431C003AC76C /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		E572EB4426D7431C003AC76C /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E5E0021227F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
+		E5E0021427F0A1D3006CEC8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E5E0021A27F0A592006CEC8B /* ConvertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +120,12 @@
 		E572EAFF26D716B7003AC76C /* GoogleDriveOriginalURL */ = {
 			isa = PBXGroup;
 			children = (
+				E5E0021127F09FA8006CEC8B /* Models */,
+				E5E0021027F09F9E006CEC8B /* Utils */,
 				E572EB0026D716B7003AC76C /* GoogleDriveOriginalURLApp.swift */,
 				E572EB0226D716B7003AC76C /* ContentView.swift */,
-				E572EB2C26D719D3003AC76C /* URLInputView.swift */,
-				E572EB3026D71BDE003AC76C /* URLInputViewModel.swift */,
-				E572EB3226D71C1B003AC76C /* URLConvertService.swift */,
-				E572EB4426D7431C003AC76C /* BottomView.swift */,
+				E5E0021927F0A57D006CEC8B /* Convert List */,
+				E5E0021627F0A209006CEC8B /* Settings */,
 				E572EB0426D716B8003AC76C /* Assets.xcassets */,
 				E572EB0926D716B8003AC76C /* Info.plist */,
 				E572EB0A26D716B8003AC76C /* googleDriveOriginalURL.entitlements */,
@@ -151,6 +159,42 @@
 				E572EB2026D716B8003AC76C /* Info.plist */,
 			);
 			path = GoogleDriveOriginalURLUITests;
+			sourceTree = "<group>";
+		};
+		E5E0021027F09F9E006CEC8B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0021227F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E5E0021127F09FA8006CEC8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5E0021627F0A209006CEC8B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0021427F0A1D3006CEC8B /* SettingsView.swift */,
+				E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E5E0021927F0A57D006CEC8B /* Convert List */ = {
+			isa = PBXGroup;
+			children = (
+				E572EB2C26D719D3003AC76C /* URLInputView.swift */,
+				E572EB3026D71BDE003AC76C /* URLInputViewModel.swift */,
+				E572EB3226D71C1B003AC76C /* URLConvertService.swift */,
+				E572EB4426D7431C003AC76C /* TopView.swift */,
+				E5E0021A27F0A592006CEC8B /* ConvertListView.swift */,
+			);
+			path = "Convert List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,11 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E0021327F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift in Sources */,
 				E572EB0326D716B7003AC76C /* ContentView.swift in Sources */,
+				E5E0021527F0A1D3006CEC8B /* SettingsView.swift in Sources */,
 				E572EB3326D71C1B003AC76C /* URLConvertService.swift in Sources */,
+				E5E0021827F0A215006CEC8B /* SettingsViewModel.swift in Sources */,
 				E572EB0126D716B7003AC76C /* GoogleDriveOriginalURLApp.swift in Sources */,
-				E572EB4526D7431C003AC76C /* BottomView.swift in Sources */,
+				E572EB4526D7431C003AC76C /* TopView.swift in Sources */,
 				E572EB3126D71BDE003AC76C /* URLInputViewModel.swift in Sources */,
+				E5E0021B27F0A592006CEC8B /* ConvertListView.swift in Sources */,
 				E572EB2D26D719D3003AC76C /* URLInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -438,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -453,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = googleDriveOriginalURL/googleDriveOriginalURL.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"googleDriveOriginalURL/Preview Content\"";
@@ -465,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftman.googleDriveOriginalURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -478,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = googleDriveOriginalURL/googleDriveOriginalURL.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"googleDriveOriginalURL/Preview Content\"";
@@ -490,7 +538,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftman.googleDriveOriginalURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -502,9 +550,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y7YQUS95SK;
 				INFOPLIST_FILE = googleDriveOriginalURLTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,9 +574,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y7YQUS95SK;
 				INFOPLIST_FILE = googleDriveOriginalURLTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
