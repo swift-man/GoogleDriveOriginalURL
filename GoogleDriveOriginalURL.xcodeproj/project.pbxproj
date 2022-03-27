@@ -24,6 +24,7 @@
 		E5E0021527F0A1D3006CEC8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021427F0A1D3006CEC8B /* SettingsView.swift */; };
 		E5E0021827F0A215006CEC8B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */; };
 		E5E0021B27F0A592006CEC8B /* ConvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021A27F0A592006CEC8B /* ConvertListView.swift */; };
+		E5E0021D27F0C1DB006CEC8B /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021C27F0C1DB006CEC8B /* TopViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		E5E0021427F0A1D3006CEC8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E5E0021A27F0A592006CEC8B /* ConvertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertListView.swift; sourceTree = "<group>"; };
+		E5E0021C27F0C1DB006CEC8B /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				E5E0021027F09F9E006CEC8B /* Utils */,
 				E572EB0026D716B7003AC76C /* GoogleDriveOriginalURLApp.swift */,
 				E572EB0226D716B7003AC76C /* ContentView.swift */,
+				E5E0021E27F0C41D006CEC8B /* Service */,
 				E5E0021927F0A57D006CEC8B /* Convert List */,
 				E5E0021627F0A209006CEC8B /* Settings */,
 				E572EB0426D716B8003AC76C /* Assets.xcassets */,
@@ -188,13 +191,21 @@
 		E5E0021927F0A57D006CEC8B /* Convert List */ = {
 			isa = PBXGroup;
 			children = (
+				E5E0021A27F0A592006CEC8B /* ConvertListView.swift */,
+				E572EB4426D7431C003AC76C /* TopView.swift */,
+				E5E0021C27F0C1DB006CEC8B /* TopViewModel.swift */,
 				E572EB2C26D719D3003AC76C /* URLInputView.swift */,
 				E572EB3026D71BDE003AC76C /* URLInputViewModel.swift */,
-				E572EB3226D71C1B003AC76C /* URLConvertService.swift */,
-				E572EB4426D7431C003AC76C /* TopView.swift */,
-				E5E0021A27F0A592006CEC8B /* ConvertListView.swift */,
 			);
 			path = "Convert List";
+			sourceTree = "<group>";
+		};
+		E5E0021E27F0C41D006CEC8B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E572EB3226D71C1B003AC76C /* URLConvertService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 				E5E0021527F0A1D3006CEC8B /* SettingsView.swift in Sources */,
 				E572EB3326D71C1B003AC76C /* URLConvertService.swift in Sources */,
 				E5E0021827F0A215006CEC8B /* SettingsViewModel.swift in Sources */,
+				E5E0021D27F0C1DB006CEC8B /* TopViewModel.swift in Sources */,
 				E572EB0126D716B7003AC76C /* GoogleDriveOriginalURLApp.swift in Sources */,
 				E572EB4526D7431C003AC76C /* TopView.swift in Sources */,
 				E572EB3126D71BDE003AC76C /* URLInputViewModel.swift in Sources */,
@@ -560,7 +572,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftman.googleDriveOriginalURLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -584,7 +596,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftman.googleDriveOriginalURLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -10,7 +10,7 @@ import SwiftUI
 import CoreServices
 
 struct URLInputView: View {
-  @State var viewModel: URLInputViewModel
+  @StateObject var viewModel: URLInputViewModel
   
   var body: some View {
     HStack {
