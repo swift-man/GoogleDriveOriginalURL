@@ -7,5 +7,5 @@ https://swift-man.github.io/git/blog/imageUpload/
 ![Badge - Version](https://img.shields.io/badge/Version-0.0.5-1177AA?style=flat-square)
 
 ## Feature
-- [ ] Bottom Toolbar Button - Copy All  
-- [ ] Setting UISwitch - optional input Enter Key 
+- [x] Bottom Toolbar Button - Copy All  
+- [x] Setting UISwitch - optional input Enter Key 
