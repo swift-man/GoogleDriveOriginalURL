@@ -54,9 +54,11 @@ final class URLInputViewModel: ObservableObject {
       case .normal:
         self.leftImageName = "checkmark.square.fill"
         self.leftImageColor = .clear
+        self.copyButtonColor = .white
       case .success:
         self.leftImageName = "checkmark.square.fill"
         self.leftImageColor = .green
+        self.copyButtonColor = .white
       }
     })
     .store(in: &subscriptions)
