@@ -20,6 +20,7 @@
 		E572EB4126D728E8003AC76C /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = E572EB4026D728E8003AC76C /* Quick */; };
 		E572EB4326D741F5003AC76C /* URLInputViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572EB4226D741F5003AC76C /* URLInputViewModelSpec.swift */; };
 		E572EB4526D7431C003AC76C /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E572EB4426D7431C003AC76C /* TopView.swift */; };
+		E5836D0D28C7837C00A4F85C /* TopViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5836D0C28C7837C00A4F85C /* TopViewModelSpec.swift */; };
 		E5E0021327F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021227F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift */; };
 		E5E0021527F0A1D3006CEC8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021427F0A1D3006CEC8B /* SettingsView.swift */; };
 		E5E0021827F0A215006CEC8B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */; };
@@ -63,6 +64,7 @@
 		E572EB3426D71E3D003AC76C /* URLConvertServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertServiceSpec.swift; sourceTree = "<group>"; };
 		E572EB4226D741F5003AC76C /* URLInputViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLInputViewModelSpec.swift; sourceTree = "<group>"; };
 		E572EB4426D7431C003AC76C /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E5836D0C28C7837C00A4F85C /* TopViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModelSpec.swift; sourceTree = "<group>"; };
 		E5E0021227F09FCC006CEC8B /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
 		E5E0021427F0A1D3006CEC8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E5E0021727F0A215006CEC8B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				E572EB3426D71E3D003AC76C /* URLConvertServiceSpec.swift */,
 				E572EB4226D741F5003AC76C /* URLInputViewModelSpec.swift */,
+				E5836D0C28C7837C00A4F85C /* TopViewModelSpec.swift */,
 				E572EB1526D716B8003AC76C /* Info.plist */,
 			);
 			path = GoogleDriveOriginalURLTests;
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5836D0D28C7837C00A4F85C /* TopViewModelSpec.swift in Sources */,
 				E572EB4326D741F5003AC76C /* URLInputViewModelSpec.swift in Sources */,
 				E572EB3526D71E3D003AC76C /* URLConvertServiceSpec.swift in Sources */,
 			);
@@ -530,6 +534,7 @@
 				MARKETING_VERSION = 0.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftman.googleDriveOriginalURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -557,6 +562,7 @@
 				MARKETING_VERSION = 0.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftman.googleDriveOriginalURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -635,7 +641,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Y7YQUS95SK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = googleDriveOriginalURLUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

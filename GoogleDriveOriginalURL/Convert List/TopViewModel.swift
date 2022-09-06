@@ -29,7 +29,8 @@ final class TopViewModel: ObservableObject {
     return false
   }
   
-  func copyAll() {
+  @discardableResult
+  func copyAll() -> String {
     var successText = ""
     for viewModel in viewModels where viewModel.state == .success {
       if successText.isEmpty {
@@ -40,11 +41,13 @@ final class TopViewModel: ObservableObject {
       }
     }
     
-    guard !successText.isEmpty else { return }
+    guard !successText.isEmpty else { return successText }
     
     let pasteBoard = NSPasteboard.general
     pasteBoard.clearContents()
     pasteBoard.setString(successText, forType: .string)
+    
+    return successText
   }
   
   func undoAll() {
