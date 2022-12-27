@@ -34,6 +34,7 @@ final class URLConvertService {
     }
     urlString = urlString.replacingOccurrences(of: "/file/d/", with: "/uc?export=view&id=")
     urlString = urlString.replacingOccurrences(of: "/view?usp=sharing", with: "")
+    urlString = urlString.replacingOccurrences(of: "/view?usp=share_link", with: "")
     
     if hasMarkdownTag {
       urlString = "![Image](\(urlString))"

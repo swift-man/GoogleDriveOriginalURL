@@ -61,6 +61,28 @@ class URLConvertServiceSpec: QuickSpec {
           expect(value.text).to(equal("![Image](https://drive.google.com/uc?export=view&id=1CuhXzbSrIdJjjs4DpbOl_O18oKV4FiL_)"))
         }
       }
+      
+      context("convertInputURL hasMarkdownTag: true hasMarkdownEnterKey: false") {
+        it("https://drive.google.com/file/d/1gYZo2WfamjWpI_bpZQ20d48X6ofh-0Zh/view?usp=share_link") {
+          service.convertInputURL(hasMarkdownTag: true,
+                                  hasMarkdownEnterKey: false,
+                                  input: "https://drive.google.com/file/d/1gYZo2WfamjWpI_bpZQ20d48X6ofh-0Zh/view?usp=share_link")
+          let value = service.inputSubject.value
+          expect(value.state).to(equal(.success))
+          expect(value.text).to(equal("![Image](https://drive.google.com/uc?export=view&id=1gYZo2WfamjWpI_bpZQ20d48X6ofh-0Zh)"))
+        }
+      }
+      
+      context("convertInputURL hasMarkdownTag: true hasMarkdownEnterKey: false") {
+        it("https://drive.google.com/file/d/1xVo0pHtdNNFc-XZTmBBmKx-wFm53qups/view?usp=share_link") {
+          service.convertInputURL(hasMarkdownTag: true,
+                                  hasMarkdownEnterKey: false,
+                                  input: "https://drive.google.com/file/d/1xVo0pHtdNNFc-XZTmBBmKx-wFm53qups/view?usp=share_link")
+          let value = service.inputSubject.value
+          expect(value.state).to(equal(.success))
+          expect(value.text).to(equal("![Image](https://drive.google.com/uc?export=view&id=1xVo0pHtdNNFc-XZTmBBmKx-wFm53qups)"))
+        }
+      }
     }
   }
 }
